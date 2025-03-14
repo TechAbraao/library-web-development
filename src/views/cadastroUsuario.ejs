@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="1"> -->
+    <link rel="stylesheet" href="/css/cadastrousuario.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="pagina_cadastro_usuario">
+        <form action="/livraria/cadastro/processamento" method="POST">
+            <label for="usuario">Nome do Usuário</label>
+            <input type="text" id="usuario" name="usuario" required placeholder="Digite seu usuario completo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
+            <button type="submit">Cadastrar</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,10 +1,8 @@
 import Livro from "../models/Livro.js"
 
-
 export default function adicionandoLivro(req, res) {
     const novoLivro = req.body
     const novoLivroJson = JSON.stringify(novoLivro)
-    
     Livro.create({
         titulo: novoLivro.titulo,
         autor: novoLivro.autor,
@@ -15,8 +13,6 @@ export default function adicionandoLivro(req, res) {
         sinopse: novoLivro.sinopse,
         capa: novoLivro.capa,
     })
-
     res.status(200).send(novoLivroJson)
-
 }
 

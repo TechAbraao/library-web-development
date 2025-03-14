@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<nav id="componente_navbar">
+    <ul>
+        <% links.forEach(function(links) { %>
+            <li><a href="#"><%- links %></a></li>
+        <% }); %>
+    </ul>
+    <div>
+        <button>
+            Entrar
+        </button>
+        <button onclick="window.location.href = '/livraria/cadastro'">
+            Cadastrar
+        </button>
+    </div>
+</nav>
