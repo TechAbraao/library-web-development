@@ -11,13 +11,13 @@ app.use(express.json())
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
 
-app.use("/fatec/", routes)
-
+const URLPrefix = "livraria"
+app.use(`/${URLPrefix}/`, routes)
 
 const HOST = process.env.HOST 
 const PORT = process.env.PORT
 
 app.listen(PORT, () => {
     database.sync()
-    console.log(`Servidor: http://${HOST}:${PORT}/fatec/<end-point>`)
+    console.log(`Servidor: http://${HOST}:${PORT}/${URLPrefix}/<end-point>`)
 })

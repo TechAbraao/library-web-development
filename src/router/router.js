@@ -1,20 +1,13 @@
 import { Router } from 'express'
-import incrementPerson from '../controllers/PersonController.js' 
+import adicionandoLivro from '../controllers/LivroController.js'
 
 const routes = Router()
 
-routes.get("/", (req, res) => {
-    res.status(200).send("Hello, World!")
+routes.get("/inicio", (req, res) => {
+    res.status(200).render("template")
 })
 
-routes.get("/increment", incrementPerson)
-
-routes.get("/hello-world", (req, res) => {
-    res.status(200).render("index", {
-        titulo: 'Eu sou o Abraão'
-    }) 
-})
-
+routes.get("/novo-livro", adicionandoLivro)
 
 
 export default routes
