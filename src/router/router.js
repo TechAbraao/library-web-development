@@ -10,6 +10,10 @@ routes.get("/inicio", (req, res) => {
 routes.get("/cadastro", (req, res) => {
     res.status(200).render("cadastroUsuario")
 })
+routes.get("/entrar", (req, res) => {
+    res.status(200).render("entrar")
+})
+
 routes.post("/cadastro/processamento", registrarUsuario)
 
 
