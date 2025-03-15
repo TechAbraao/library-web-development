@@ -7,7 +7,7 @@ export default function registrarUsuario(req, res) {
         email: email,
         senha: senha,
     })
-    res.status(200).send(`<h1>Registro bem sucedido</h1>`)
+    res.status(200).send(`<h1>Cadastrado com sucesso</h1>`)
 }
 
 export async function verificaUsuario(req, res) {
