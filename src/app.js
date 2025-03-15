@@ -24,6 +24,10 @@ const HOST = process.env.HOST;
 const PORT = process.env.PORT;
 
 app.listen(PORT, async () => {
-    await database.sync(({ force: false }));
-    console.log(`Servidor: http://${HOST}:${PORT}/${URLPrefix}/<end-point>`);
+    try {
+        await database.sync(({ force: false }));
+        console.log(`Servidor: http://${HOST}:${PORT}/${URLPrefix}/inicio`);
+    } catch (error) {
+        console.log(`Erro ao inicializar a aplicação.\n${error}`)
+    }
 });

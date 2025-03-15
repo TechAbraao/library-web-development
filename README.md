@@ -5,5 +5,6 @@
   <img alt="Static Badge" src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=Node.js&logoColor=white&logoSize=60">
   <img alt="Static Badge" src="https://img.shields.io/badge/Sequelize-black?style=for-the-badge&logo=Sequelize&logoColor=white&logoSize=60">
   <img alt="Static Badge" src="https://img.shields.io/badge/EJS-black?style=for-the-badge&logo=ejs&logoColor=white&logoSize=60">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Bootstrap-black?style=for-the-badge&logo=Bootstrap&logoColor=white&logoSize=60">
   <img alt="Static Badge" src="https://img.shields.io/badge/SQLite-black?style=for-the-badge&logo=SQLite&logoColor=white&logoSize=60">
 </div>

@@ -7,5 +7,22 @@ export default function registrarUsuario(req, res) {
         email: email,
         senha: senha,
     })
-    res.redirect(`/livraria/${usuario}`)
+    res.status(200).send(`<h1>Registro bem sucedido</h1>`)
+}
+
+export async function verificaUsuario(req, res) {
+    const { usuario, senha } = req.body;
+    
+    const consultaBanco = await Usuario.findOne({ where: { nome: usuario } });
+
+    if (!consultaBanco) {
+        return res.status(400).send(`<h1>Usuário não encontrado</h1>`);
+    }
+    const senhaEncontradaNoBanco = consultaBanco.dataValues.senha;
+
+    if (senha === senhaEncontradaNoBanco) {
+        res.status(200).send(`<h1>Login efetuado com sucesso</h1>`);
+    } else {
+        res.status(400).send(`<h1>Senha inválida</h1>`);
+    }
 }
