@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import adicionandoLivro from '../controllers/LivroController.js'
-import registrarUsuario from '../controllers/UsuarioController.js'
-import { verificaUsuario } from '../controllers/UsuarioController.js'
+import RegisterUser from '../controllers/UsuarioController.js'
+import { LoginUser } from '../controllers/UsuarioController.js'
 
 const routes = Router()
 
@@ -15,8 +15,8 @@ routes.get("/entrar", (req, res) => {
     res.status(200).render("pages/entrar")
 })
 
-routes.post("/entrar/processamento", verificaUsuario)
-routes.post("/cadastro/processamento", registrarUsuario)
+routes.post("/entrar/processamento", LoginUser)
+routes.post("/cadastro/processamento", RegisterUser)
 
 
 routes.get("/novo-livro", adicionandoLivro)
