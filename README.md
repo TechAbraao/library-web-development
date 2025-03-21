@@ -1,10 +1,11 @@
 <h1 align="center">Biblioteca Web | Registre seus livros favoritos</h1>
-<h3>Tecnologias</h3>
-<div>
- <img alt="Static Badge" src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=JavaScript&logoColor=white&logoSize=60">
-  <img alt="Static Badge" src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=Node.js&logoColor=white&logoSize=60">
-  <img alt="Static Badge" src="https://img.shields.io/badge/Sequelize-black?style=for-the-badge&logo=Sequelize&logoColor=white&logoSize=60">
-  <img alt="Static Badge" src="https://img.shields.io/badge/EJS-black?style=for-the-badge&logo=ejs&logoColor=white&logoSize=60">
-  <img alt="Static Badge" src="https://img.shields.io/badge/Bootstrap-black?style=for-the-badge&logo=Bootstrap&logoColor=white&logoSize=60">
-  <img alt="Static Badge" src="https://img.shields.io/badge/SQLite-black?style=for-the-badge&logo=SQLite&logoColor=white&logoSize=60">
+<h2 align="center"> Documentação em construção! </h2>
+<h3>💻 Tecnologias 💻</h3>
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sequelize/sequelize-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original-wordmark.svg" />  
 </div>

@@ -2,6 +2,7 @@ import { Router } from 'express'
 import adicionandoLivro from '../controllers/LivroController.js'
 import RegisterUser from '../controllers/UsuarioController.js'
 import { LoginUser } from '../controllers/UsuarioController.js'
+import checkAuthenticated from '../middlewares/checkAuthenticated.js'
 
 const routes = Router()
 
@@ -9,10 +10,9 @@ const routes = Router()
 routes.get("/", (req, res) => {
     res.status(200).redirect("/inicio")
 })
-
-routes.get("/inicio", (req, res) => {
+routes.get("/inicio", checkAuthenticated, (req, res) => {
     if (req.session.username) {
-        res.status(200).render("pages/sucesso_login", { username: req.session.username })
+        res.status(200).render("pages/home", { username: req.session.username })
     }
     res.status(200).render("pages/template")
 })
@@ -21,27 +21,24 @@ routes.get("/cadastro", (req, res) => {
 })
 routes.get("/entrar", (req, res) => {
     if (req.session.username) {
-        res.status(200).redirect("/home")
+        return res.status(200).redirect("/home")
     }
     res.status(200).render("pages/entrar")
 })
-routes.get("/home", (req, res) => {
-    if (req.session.username) {
-        const usuario = req.session.username
-        res.status(200).render("pages/home", { username: usuario })
-
-    }
-    res.status(400).send({"message" : "You do not have a session for this page."})
+routes.get("/home", checkAuthenticated, (req, res) => {
+    const usuario = req.session.username
+    res.status(200).render("pages/home", { username: usuario })
 })
 routes.get("/sair", (req, res) => {
     req.session.destroy((err) => {
         if (err) {
-            return res.status(500).send({ "message" : "Error closing session" })
+            console.error("Failed to destroy session:", err);
+            return res.status(500).send({ message: "Error closing session" });
         }
-        res.status(200).redirect("/inicio")
-        console.log("End Session.")
-    })
-})
+        console.log("Session closed successfully.");
+        res.status(200).redirect("/inicio");
+    });
+});
 
 // POST Routers
 routes.post("/entrar/", LoginUser)
