@@ -1,5 +1,5 @@
 
-import { FindEmail, FindUser, FindPassword } from "../models/Usuario.js"
+import { FindEmail, FindUser, FindPassword, Usuario } from "../models/Usuario.js"
 
 // This function register user in database
 export default async function RegisterUser(req, res) {
@@ -41,7 +41,10 @@ export async function LoginUser(req, res) {
     if (findPassword !== senha) {
         return res.status(400).send({"message" : "Invalid password."})
     }
-
-    return res.status(200).send({ "message" : "Login successfully!" })
+    if (findPassword === senha && findUser === usuario) {
+        req.session.username = usuario
+        req.session.password = senha
+        return res.status(200).redirect("/home")
+    }
 }
 
